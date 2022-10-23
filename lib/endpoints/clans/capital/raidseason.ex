@@ -1,5 +1,6 @@
 defmodule Endpoints.Clans.Capital.Raidseason do
   alias Clashofclans.Client
+  alias Utils.FormatTime
 
   def get_raw_raidseason(clantag) do
     {:ok, data} =
@@ -58,12 +59,18 @@ defmodule Endpoints.Clans.Capital.Raidseason do
 
   def get_capital_endtime(clantag) do
     data = get_raw_raidseason(clantag)
-    Map.take(data["items"], ["endTime"])
+    data["items"]
+    |> Enum.map(& &1["endTime"])
+    |> hd()
+    |> FormatTime.format_time()
   end
 
   def get_capital_starttime(clantag) do
     data = get_raw_raidseason(clantag)
-    Map.take(data["items"], ["startTime"])
+    data["items"]
+    |> Enum.map(& &1["startTime"])
+    |> hd()
+    |> FormatTime.format_time()
   end
 
   def get_capital_enemy_district_destroyed(clantag) do
