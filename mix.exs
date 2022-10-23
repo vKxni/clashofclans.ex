@@ -1,0 +1,43 @@
+defmodule Clashofclans.MixProject do
+  use Mix.Project
+
+  @github_url "https://github.com/vKxni/clashofclans.ex"
+
+  def project do
+    [
+      app: :clashofclans,
+      version: "0.1.0",
+      elixir: "~> 1.14",
+      start_permanent: Mix.env() == :prod,
+      deps: deps(),
+      package: [
+        maintainers: ["vKxni"],
+        licenses: ["MIT"],
+        links: %{
+          GitHub: @github_url
+        }
+      ],
+      source_url: @github_url,
+      docs: [
+        main: "readme",
+        extras: [
+          "README.md"
+        ]
+      ]
+    ]
+  end
+
+  def application do
+    [
+      extra_applications: [:logger],
+      mod: {Clashofclans.Application, []}
+    ]
+  end
+
+  defp deps do
+    [
+      {:httpoison, "~> 1.8"},
+      {:jason, "~> 1.4"}
+    ]
+  end
+end
