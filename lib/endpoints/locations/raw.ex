@@ -5,6 +5,8 @@ defmodule Endpoints.Locations.Raw do
     Client.call_api("https://api.clashofclans.com/v1/locations/")
   end
 
+  # TODO: Error handling
+
   @spec get_raw_location_information(String.t()) :: map()
   def get_raw_location_information(location_id) do
     {:ok, data} = Client.call_api("https://api.clashofclans.com/v1/locations/#{location_id}")
