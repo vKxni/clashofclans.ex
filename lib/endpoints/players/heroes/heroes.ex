@@ -1,17 +1,17 @@
 defmodule Endpoints.Players.Heroes do
   alias Endpoints.Players.Raw
+  alias Api.Errors.NotFound
 
-  def raw_heroes(playertag) do
+  defp raw_heroes(playertag) do
     with {:ok, account} <- Raw.get_raw_player_information(playertag) do
-      Map.take(account, ["heroes"])
-      |> Map.values()
-      |> hd()
+      if account["reason"] == "notFound" do
+        NotFound.not_found(account)
+      else
+        Map.take(account, ["heroes"])
+        |> Map.values()
+        |> hd()
+      end
     end
-  end
-
-  def find_by_name(playertag, heroname) do
-    raw_heroes(playertag)
-    |> Enum.find(fn hero -> hero["name"] == heroname end)
   end
 
   def get_level_of_barbarian_king(playertag) do
@@ -32,5 +32,16 @@ defmodule Endpoints.Players.Heroes do
 
   def get_level_of_battle_machine(playertag) do
     find_by_name(playertag, "Battle Machine")["level"]
+  end
+
+  defp find_by_name(playertag, heroname) do
+    with {:ok, heroes} <- raw_heroes(playertag) do
+      if heroes["reason"] == "notFound" do
+        NotFound.not_found(heroes)
+      else
+        heroes
+        |> Enum.find(fn hero -> hero["name"] == heroname end)
+      end
+    end
   end
 end
