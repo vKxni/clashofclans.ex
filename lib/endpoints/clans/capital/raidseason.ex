@@ -1,11 +1,12 @@
 defmodule Endpoints.Clans.Capital.Raidseason do
   alias Clashofclans.Client
   alias Utils.FormatTime
+  alias Utils.FormatTag
 
   defp get_raw_raidseason(clantag) do
     {:ok, data} =
       Client.call_api(
-        "https://api.clashofclans.com/v1/clans/#{format_tag(clantag)}/capitalraidseasons?limit=2"
+        "https://api.clashofclans.com/v1/clans/#{FormatTag.format_tag(clantag)}/capitalraidseasons?limit=2"
       )
 
     data
@@ -107,9 +108,5 @@ defmodule Endpoints.Clans.Capital.Raidseason do
     data["items"]
     |> Enum.map(& &1["totalAttacks"])
     |> hd()
-  end
-
-  defp format_tag(clantag) do
-    String.replace(clantag, "#", "%23")
   end
 end
