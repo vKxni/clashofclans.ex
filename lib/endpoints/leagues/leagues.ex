@@ -2,7 +2,7 @@ defmodule Endpoints.Leagues.Leagues do
   alias Endpoints.Leagues.Raw
 
   @moduledoc """
-  Returns a list of a specific list with all kind of information
+  Returns a list of a specific leagues and their information (map).
   """
 
   def get_legend_league do

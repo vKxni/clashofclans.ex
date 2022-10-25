@@ -1,6 +1,14 @@
 defmodule Endpoints.Clans.Requirements do
   alias Clashofclans.Client
 
+  @moduledoc """
+  This module is used to get the clan's requirements such as
+  - th
+  - lvl
+  - trophies
+  - versus trophies (BB)
+  """
+
   def get_required_townhall_level(clantag) do
     with {:ok, clan} <- Client.get_clan_data(clantag) do
       Map.take(clan, ["requiredTownhallLevel"])

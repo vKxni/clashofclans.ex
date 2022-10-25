@@ -1,6 +1,13 @@
 defmodule Endpoints.Clans.Location do
   alias Endpoints.Clans.Raw
 
+  @moduledoc """
+  All kind of informations about a clans location such as
+  - name
+  - country (+ code)
+  - id
+  """
+
   def get_clan_location_list(clantag) do
     with {:ok, clan} <- Raw.get_raw_clan_information(clantag) do
       Map.take(clan, ["location"])

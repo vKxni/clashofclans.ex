@@ -3,7 +3,12 @@ defmodule Endpoints.Clans.Capital.Raidseason do
   alias Utils.FormatTime
   alias Utils.FormatTag
 
-  def get_raw_raidseason(clantag) do
+  @moduledoc """
+  Returns all kind of information about a clans raidseason
+  """
+
+  # the limit here might be increased ...
+  defp get_raw_raidseason(clantag) do
     {:ok, data} =
       Client.call_api(
         "https://api.clashofclans.com/v1/clans/#{FormatTag.format_tag(clantag)}/capitalraidseasons?limit=2"
@@ -60,6 +65,7 @@ defmodule Endpoints.Clans.Capital.Raidseason do
 
   def get_capital_endtime(clantag) do
     data = get_raw_raidseason(clantag)
+
     data["items"]
     |> Enum.map(& &1["endTime"])
     |> hd()
@@ -68,6 +74,7 @@ defmodule Endpoints.Clans.Capital.Raidseason do
 
   def get_capital_starttime(clantag) do
     data = get_raw_raidseason(clantag)
+
     data["items"]
     |> Enum.map(& &1["startTime"])
     |> hd()

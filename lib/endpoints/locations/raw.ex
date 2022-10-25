@@ -1,6 +1,12 @@
 defmodule Endpoints.Locations.Raw do
   alias Clashofclans.Client
 
+  @moduledoc """
+  Returns informations about a location (filter: location id*)
+
+  * Can be found through: get_raw_locations/0
+  """
+
   def get_raw_locations do
     Client.call_api("https://api.clashofclans.com/v1/locations/")
   end
