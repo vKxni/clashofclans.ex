@@ -10,7 +10,18 @@
 <img src="coc.ex_logo.png"  alt="clashofclans.ex" width="300" height="300"/></a>
 <p>
 
+```elixir
+defmodule Example do
+  alias Clashofclans.Base.Players
 
+  def playername(playername) do
+    Players.playername(playername)
+  end
+end
+
+# returns the name of the player
+Example.playername("your-tag-here") 
+```
 
 ---
 
@@ -68,4 +79,6 @@ make  sure the `.env` is in your root directory.
 - [x] Gold pass
 
 ##### 2.) Functions
+
+detailed example coming soon.
 
