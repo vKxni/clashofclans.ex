@@ -1,6 +1,5 @@
 defmodule Clashofclans.Client do
   alias Clashofclans.Api
-  alias Api.Errors.InvalidIp
 
   @doc """
   A wrapper for the HTTPoison.get function to a specific URL
@@ -9,10 +8,12 @@ defmodule Clashofclans.Client do
   @spec call_api(urltype) :: {:ok, map()} | {:error, String.t()}
   def call_api(url) do
     with {:ok, %{body: body}} <- Api.get(url) do
+      Jason.decode(body)
+
       if body["reason"] == "accessDenied.invalidIp" do
-        {:error, "The IP address is not whitelisted."}
+        {:error, "Your current IP is not whitelisted."}
       else
-        {:ok, Jason.decode(body)}
+        {:ok, body}
       end
     end
   end
@@ -26,10 +27,12 @@ defmodule Clashofclans.Client do
     url = "https://api.clashofclans.com/v1/players/#{URI.encode_www_form(playertag)}/"
 
     with {:ok, %{body: body}} <- Api.get(url) do
+      Jason.decode(body)
+
       if body["reason"] == "accessDenied.invalidIp" do
         {:error, "The IP address is not whitelisted."}
       else
-        {:ok, Jason.decode(body)}
+        {:ok, body}
       end
     end
   end
@@ -43,10 +46,12 @@ defmodule Clashofclans.Client do
     url = "https://api.clashofclans.com/v1/clans/#{URI.encode_www_form(clantag)}/"
 
     with {:ok, %{body: body}} <- Api.get(url) do
+      Jason.decode(body)
+
       if body["reason"] == "accessDenied.invalidIp" do
         {:error, "The IP address is not whitelisted."}
       else
-        {:ok, Jason.decode(body)}
+        {:ok, body}
       end
     end
   end
