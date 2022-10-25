@@ -4,7 +4,7 @@
 
 # <p align="center">ClashOfClans.ex
 
-<p align="center">An <strong>functional</strong> Clash of Clans APi Wrapper written in pure Elixir.</p>
+<p align="center">A <strong>functional</strong> Clash of Clans APi Wrapper written in pure Elixir.</p>
 
 <p align="center">
 <img src="coc.ex_logo.png"  alt="clashofclans.ex" width="300" height="300"/></a>
