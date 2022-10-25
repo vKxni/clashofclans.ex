@@ -26,7 +26,7 @@ Example.playername("your-tag-here")
 ---
 
 ## Getting started
-*BSF: This is a WIP and currently in v1 (development) mode. This means that the API is not stable and may change at any time.*
+*BSF: This is a WIP and currently in v1 (development) mode. This means that the API is not stable and may change at any time. Please report bugs through issue requests, thanks.*
 > #### Installing
     
 ```elixir
@@ -72,13 +72,22 @@ make  sure the `.env` is in your root directory.
 
 > ### Queries, functions, modules
 
-##### 1.) Modules
+#### 1.) Modules
 - [x] Clan
 - [x] Player
 - [x] Leagues 
 - [x] Gold pass
 
-##### 2.) Functions
+#### 2.) Functions
 
-detailed example coming soon.
+- Base 
 
+coming soon
+
+- Extended
+
+coming soon
+
+---
+
+© vKxni 2022, [MIT Licence](/LICENSE), by [@vKxni](https://github.com/vKxni).
