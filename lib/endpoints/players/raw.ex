@@ -11,13 +11,21 @@ defmodule Endpoints.Players.Raw do
 
   def get_achievements_from_account(playertag) do
     with {:ok, account} <- get_raw_player_information(playertag) do
-      Map.take(account, ["achievements"])
+      if account["reason"] == "notFound" do
+        {:error, "Player is invalid, banned or does not exist. "}
+      else
+        Map.take(account, ["achievements"])
+      end
     end
   end
 
   def get_troops_from_account(playertag) do
     with {:ok, account} <- get_raw_player_information(playertag) do
-      Map.take(account, ["troops"])
+      if account["reason"] == "notFound" do
+        {:error, "Player is invalid, banned or does not exist. "}
+      else
+        Map.take(account, ["troops"])
+      end
     end
   end
 end
