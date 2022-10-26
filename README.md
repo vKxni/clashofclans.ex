@@ -28,10 +28,11 @@ Example.playername("your-tag-here")
 ## Getting started
 *BSF: This is a WIP and currently in v1 (development) mode. This means that the API is not stable and may change at any time. Please report bugs through issue requests, thanks.*
 > #### Installing
-    
+
+[https://hex.pm/packages/clashofclans](https://hex.pm/packages/clashofclans)    
 ```elixir
 def deps do
-    [{:clashofclans, "~> 0.1.0"}]
+    [{:clashofclans, "~> 1.2.0"}]
 end
 ```
 
