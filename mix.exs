@@ -6,7 +6,7 @@ defmodule Clashofclans.MixProject do
   def project do
     [
       app: :clashofclans,
-      version: "1.2.0",
+      version: "1.2.5",
       description: "An extended and functional wrapper for the Clash of Clans API",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,

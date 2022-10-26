@@ -32,7 +32,7 @@ Example.playername("your-tag-here")
 [https://hex.pm/packages/clashofclans](https://hex.pm/packages/clashofclans)    
 ```elixir
 def deps do
-    [{:clashofclans, "~> 1.2.0"}]
+    [{:clashofclans, "~> 1.2.5"}]
 end
 ```
 
