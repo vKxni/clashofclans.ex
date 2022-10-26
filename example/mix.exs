@@ -21,7 +21,7 @@ defmodule Example.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:clashofclans, "~> 1.1"}
+      {:clashofclans, "~> 1.2"}
     ]
   end
 end
