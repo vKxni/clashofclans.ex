@@ -392,7 +392,7 @@ defmodule Clashofclans.Leagues do
     Leagues.get_gold_league_one()
   end
 
-  def ilver_league_three do
+  def silver_league_three do
     Leagues.get_silver_league_three()
   end
 

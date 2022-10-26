@@ -81,13 +81,110 @@ make  sure the `.env` is in your root directory.
 
 #### 2.) Functions
 
-- Base 
+> Base
 
-coming soon
+`Base.Players/1` 
+- playername(playertag)
+- townhall(playertag)
+- xp(playertag)
+- trophies(playertag)
+- highest_trophies(playertag)
+- clanrole(playertag)
+- donations(playertag)
+- clanrole(playertag)
+- warpreference(playertag)
+- attackwins(playertag)
+- defensewins(playertag)
+- players_clanlevel(playertag)
+- players_clanname(playertag)
+- players_clantag(playertag)
 
-- Extended
+`Base.Clans/1`
+- clanname(clantag)
+- clanlevel(clantag)
+- clanpoints(clantag)
+- clanlocation(clantag)
+- clanlanguage(clantag)
+- clantype(clantag)
+- clandescription(clantag)
 
-coming soon
+> Extended
+
+`Extended.Players/1`
+- townhallweapon(playertag)
+- builderhalllevel(playertag)
+- highest_versus_trophies(playertag)
+- versus_trophies(playertag)
+- versus_win_count(playertag)
+- versuswins(playertag)
+- barbariankinglevel(playertag)
+- archerqueenlevel(playertag)
+- grandwardenlevel(playertag)
+- royalchampionlevel(playertag)
+- battlemachinelevel(playertag)
+
+`Extended.Clans/1`
+- clanversustrophies(clantag)
+- capital_state(clantag)
+- capital_attacklog(clantag)
+- capital_defense_reward(clantag)
+- capital_endtime(clantag)
+- capital_starttime(clantag)
+- enemy_districts_destroyed(clantag)
+- capital_totalloot(clantag)
+- capital_totalattacks(clantag)
+- public_warlog(clantag)
+- warfrequency(clantag)
+- warleague(clantag)
+- warwins(clantag)
+- warwinstreak(clantag)
+- clanmember_list(clantag)
+- clanmember_count(clantag)
+- required_th_level(clantag)
+- required_trophies(clantag)
+- required_versus_trophies(clantag)
+ 
+> Utils
+`Players.LegendLeague/1`
+ 
+- best_legend_season(playertag)
+- current_legend_season(playertag)
+- legend_trophies(playertag)
+- previous_legend_season_rank(playertag)
+- previous_legend_season_trophies(playertag)
+- previous_legend_season_id(playertag)
+
+`Leagues/0`
+- legend_league
+- titan_league_three
+- titan_league_two
+- titan_league_one
+- champion_league_three
+- champion_league_two
+- champion_league_one
+- master_league_three
+- master_league_two
+- master_league_one
+- crystal_league_three
+- crystal_league_two
+- crystal_league_one
+- gold_league_three
+- gold_league_two
+- gold_league_one
+- silver_league_three
+- silver_league_two
+- silver_league_one
+- bronze_league_three
+- bronze_league_two
+- bronze_league_one
+- unranked
+
+`GoldPass/0`
+- goldpass_starttime
+- goldpass_endtime
+
+
+locations and verification coming soon!
 
 ---
 
