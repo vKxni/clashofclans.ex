@@ -1,4 +1,4 @@
-defmodule Endpoints.Players.Clan.Clanlevel do
+defmodule Endpoints.Players.Clanlevel do
   alias Endpoints.Players.Raw
 
   def get_players_clanlevel(playertag) do
