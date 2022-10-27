@@ -149,6 +149,7 @@ make  sure the `.env` is in your root directory.
 - required_versus_trophies(clantag)
  
 > Utils
+  
 `Players.LegendLeague/1`
  
 - best_legend_season(playertag)
