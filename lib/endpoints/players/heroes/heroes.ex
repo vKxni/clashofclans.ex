@@ -9,11 +9,6 @@ defmodule Endpoints.Players.Heroes do
     end
   end
 
-  def find_by_name(playertag, heroname) do
-    raw_heroes(playertag)
-    |> Enum.find(fn hero -> hero["name"] == heroname end)
-  end
-
   def get_level_of_barbarian_king(playertag) do
     find_by_name(playertag, "Barbarian King")["level"]
   end
@@ -32,5 +27,10 @@ defmodule Endpoints.Players.Heroes do
 
   def get_level_of_battle_machine(playertag) do
     find_by_name(playertag, "Battle Machine")["level"]
+  end
+
+  defp find_by_name(playertag, heroname) do
+    raw_heroes(playertag)
+    |> Enum.find(fn hero -> hero["name"] == heroname end)
   end
 end
