@@ -78,8 +78,8 @@ make  sure the `.env` is in your root directory.
 - [x] Player
 - [x] Leagues 
 - [x] Gold pass
+- [x] Verification
 - [ ] Locations
-- [ ] Verification
 - [ ] Mail Authentication
 - [ ] Error Handling
 
