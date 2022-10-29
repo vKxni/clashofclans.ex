@@ -5,10 +5,13 @@ defmodule Endpoints.Players.Verification do
   @moduledoc """
   This module is responsible for verifying a players account.
 
+  e.g. "#AB123", "my_token_here"
+
   Returns "invalid" if the API token is invalid/expired,
   Return "ok" if both is valid and the player is verified.
 
-  DEV NOTE: This module has its own request endpoint since we need "content-type" instead of the "accept" header.
+  DEV NOTE: This module has its own request endpoint since we need a POST request with a "content-type"
+  # instead of the "accept" header.
   """
 
   def process_request_headers(headers),

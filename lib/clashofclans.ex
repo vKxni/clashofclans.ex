@@ -143,7 +143,8 @@ defmodule Clashofclans.Extended.Players do
     VersusTrophies,
     Builderbase.VersusWinCount,
     VersusWins,
-    Heroes
+    Heroes,
+    Verification
   }
 
   def townhallweapon(playertag) do
@@ -188,6 +189,10 @@ defmodule Clashofclans.Extended.Players do
 
   def battlemachinelevel(playertag) do
     Heroes.get_level_of_battle_machine(playertag)
+  end
+
+  def verifyplayer(playertag, token) do
+    Verification.verify_player(playertag, token)
   end
 end
 

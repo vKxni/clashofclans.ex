@@ -26,21 +26,19 @@ Example.playername("your-tag-here")
 ---
 
 ## Getting started
-*BSF: This is a WIP and currently in v1 (development) mode. This means that the API is not stable and may change at any time. Please report bugs through issue requests, thanks.*
+*Please only use the latest version of the package - we do not offer support for any lower or outdated versions.*
 > #### Installing
 
 [https://hex.pm/packages/clashofclans](https://hex.pm/packages/clashofclans)    
 ```elixir
 def deps do
-    [{:clashofclans, "~> 1.2.5"}]
+    [{:clashofclans, "~> 1.3.0"}]
 end
 ```
 
 ```
 $ mix deps.get
 ```
-
---- 
 
 > #### Configuration
 Since we (currently) only support authentication through APi tokens, you will need to get one from the [Clash of Clans API](https://developer.clashofclans.com/#/account) website. Once you have your token, you can add it to your `config/config.exs` file like so:
@@ -158,6 +156,9 @@ make  sure the `.env` is in your root directory.
 - previous_legend_season_trophies(playertag)
 - previous_legend_season_id(playertag)
 
+`Players.Verification/2`
+- verifyplayer(playertag, token)
+
 `Leagues/0`
 - legend_league
 - titan_league_three
@@ -186,9 +187,6 @@ make  sure the `.env` is in your root directory.
 `GoldPass/0`
 - goldpass_starttime
 - goldpass_endtime
-
-
-locations and verification coming soon!
 
 ---
 
