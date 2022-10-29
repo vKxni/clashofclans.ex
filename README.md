@@ -48,7 +48,7 @@ Since we (currently) only support authentication through APi tokens, you will ne
 # Without sourcing
 import Config
 
-config :clashofclans, api_key: System.get_env("API_KEY")
+config :clashofclans, api_key: "super-secret-api-key-here"
 ``` 
 
 `config/config.exs`
@@ -56,7 +56,7 @@ config :clashofclans, api_key: System.get_env("API_KEY")
 # With sourcing
 import Config
 
-config :clashofclans, api_key: "super-secret-api-key-here"
+config :clashofclans, api_key: System.get_env("API_KEY")
 ``` 
 **With this method you have to run `source .env` before running/building your application.**
 
