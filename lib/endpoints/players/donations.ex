@@ -6,10 +6,10 @@ defmodule Endpoints.Players.Donations do
       if account["reason"] == "notFound" do
         {:error, "Player is invalid, banned or does not exist. "}
       else
-      Map.take(account, ["donations"])
-      |> Map.values()
-      |> hd()
+        Map.take(account, ["donations"])
+        |> Map.values()
+        |> hd()
+      end
     end
-  end
   end
 end

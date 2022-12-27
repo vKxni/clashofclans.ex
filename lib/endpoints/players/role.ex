@@ -6,8 +6,8 @@ defmodule Endpoints.Players.Role do
       if account["reason"] == "notFound" do
         {:error, "Player is invalid, banned or does not exist. "}
       else
-      Kernel.get_in(account, ["role"])
+        Kernel.get_in(account, ["role"])
+      end
     end
-  end
   end
 end
