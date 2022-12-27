@@ -81,7 +81,7 @@ make  sure the `.env` is in your root directory.
 - [ ] Mail Authentication
 - [ ] Error Handling
 
-#### 2.) Functions
+#### 2.) Endpoints
 
 > Base
 
