@@ -101,6 +101,14 @@ make  sure the `.env` is in your root directory.
 - players_clanname(playertag)
 - players_clantag(playertag)
 
+```elixir
+alias Clashofclans.Base.Players
+
+def clanrole(playertag) do
+  Players.clanrole(playertag)
+end
+```
+
 `Base.Clans/1`
 - clanname(clantag)
 - clanlevel(clantag)
@@ -109,6 +117,14 @@ make  sure the `.env` is in your root directory.
 - clanlanguage(clantag)
 - clantype(clantag)
 - clandescription(clantag)
+
+```elixir
+alias Clashofclans.Base.Clans
+
+def clanlocation(clantag) do
+  Clans.clanlocation(clantag)
+end
+```
 
 > Extended
 
@@ -124,6 +140,14 @@ make  sure the `.env` is in your root directory.
 - grandwardenlevel(playertag)
 - royalchampionlevel(playertag)
 - battlemachinelevel(playertag)
+
+```elixir
+alias Clashofclans.Extended.Players
+
+def barbariankinglevel(playertag) do
+  Players.barbariankinglevel(playertag)
+end
+```
 
 `Extended.Clans/1`
 - clanversustrophies(clantag)
@@ -146,9 +170,15 @@ make  sure the `.env` is in your root directory.
 - required_trophies(clantag)
 - required_versus_trophies(clantag)
  
-> Utils
+```elixir
+alias Clashofclans.Extended.Clans
 
-`Players.LegendLeague/1`
+def th_level(clantag) do
+  Clans.required_th_level(clantag)
+end
+```
+
+`Extendend.LegendLeague/1`
  
 - best_legend_season(playertag)
 - current_legend_season(playertag)
@@ -157,8 +187,24 @@ make  sure the `.env` is in your root directory.
 - previous_legend_season_trophies(playertag)
 - previous_legend_season_id(playertag)
 
+```elixir
+alias Clashofclans.Extendend.LegendLeague
+
+def legend_trophies(playertag) do
+  LegendLeague.legend_trophies(playertag)
+end
+```
+
 `Players.Verification/2`
 - verifyplayer(playertag, token)
+
+```elixir
+alias Clashofclans.Extended.Players
+
+def verifyplayer(playertag, token) do
+  Players.verifyplayer(playertag, token)
+end
+```
 
 `Leagues/0`
 - legend_league
@@ -185,9 +231,21 @@ make  sure the `.env` is in your root directory.
 - bronze_league_one
 - unranked
 
+```elixir
+alias Clashofclans.Leagues
+
+def bronze_league_one do
+  Leagues.bronze_league_one
+end
+```
+
 `GoldPass/0`
 - goldpass_starttime
 - goldpass_endtime
+
+```elixir
+alias Clashofclans.GoldPass
+
 
 ---
 
