@@ -20,16 +20,19 @@ defmodule Example do
 end
 
 # returns the name of the player
-Example.playername("your-tag-here") 
+Example.playername("your-tag-here")
 ```
 
 ---
 
 ## Getting started
-*Please only use the latest version of the package - we do not offer support for any lower or outdated versions.*
+
+_Please only use the latest version of the package - we do not offer support for any lower or outdated versions._
+
 > #### Installing
 
-[https://hex.pm/packages/clashofclans](https://hex.pm/packages/clashofclans)    
+[https://hex.pm/packages/clashofclans](https://hex.pm/packages/clashofclans)
+
 ```elixir
 def deps do
     [{:clashofclans, "~> 1.3.0"}]
@@ -41,40 +44,47 @@ $ mix deps.get
 ```
 
 > #### Configuration
-Since we (currently) only support authentication through APi tokens, you will need to get one from the [Clash of Clans API](https://developer.clashofclans.com/#/account) website. Once you have your token, you can add it to your `config/config.exs` file like so:
+>
+> Since we (currently) only support authentication through APi tokens, you will need to get one from the [Clash of Clans API](https://developer.clashofclans.com/#/account) website. Once you have your token, you can add it to your `config/config.exs` file like so:
 
 `config/config.exs`
+
 ```elixir
 # Without sourcing
 import Config
 
 config :clashofclans, api_key: "super-secret-api-key-here"
-``` 
+```
 
 `config/config.exs`
+
 ```elixir
 # With sourcing
 import Config
 
 config :clashofclans, api_key: System.get_env("API_KEY")
-``` 
+```
+
 **With this method you have to run `source .env` before running/building your application.**
 
-*Note:* If you want to use a custom ENV environment on runtime, then use a custom library like [https://hex.pm/packages/dotenv_parser](https://hex.pm/packages/dotenv_parser).
+_Note:_ If you want to use a custom ENV environment on runtime, then use a custom library like [https://hex.pm/packages/dotenv_parser](https://hex.pm/packages/dotenv_parser).
 
 `.env` example
+
 ```
 export API_KEY="super-secret-api-key-here"
 ```
+
 You can directly pass in the APi key if you use a custom/runtime environment, but
-make  sure the `.env` is in your root directory.
+make sure the `.env` is in your root directory.
 
 > ### Queries, functions, modules
 
 #### 1.) Modules
+
 - [x] Clan
 - [x] Player
-- [x] Leagues 
+- [x] Leagues
 - [x] Gold pass
 - [x] Verification
 - [ ] Locations
@@ -85,7 +95,8 @@ make  sure the `.env` is in your root directory.
 
 > Base
 
-`Base.Players/1` 
+`Base.Players/1`
+
 - playername(playertag)
 - townhall(playertag)
 - xp(playertag)
@@ -110,6 +121,7 @@ end
 ```
 
 `Base.Clans/1`
+
 - clanname(clantag)
 - clanlevel(clantag)
 - clanpoints(clantag)
@@ -129,6 +141,7 @@ end
 > Extended
 
 `Extended.Players/1`
+
 - townhallweapon(playertag)
 - builderhalllevel(playertag)
 - highest_versus_trophies(playertag)
@@ -141,6 +154,8 @@ end
 - royalchampionlevel(playertag)
 - battlemachinelevel(playertag)
 
+- verifyplayer(playertag, token)
+
 ```elixir
 alias Clashofclans.Extended.Players
 
@@ -150,6 +165,7 @@ end
 ```
 
 `Extended.Clans/1`
+
 - clanversustrophies(clantag)
 - capital_state(clantag)
 - capital_attacklog(clantag)
@@ -169,7 +185,7 @@ end
 - required_th_level(clantag)
 - required_trophies(clantag)
 - required_versus_trophies(clantag)
- 
+
 ```elixir
 alias Clashofclans.Extended.Clans
 
@@ -179,7 +195,7 @@ end
 ```
 
 `Extendend.LegendLeague/1`
- 
+
 - best_legend_season(playertag)
 - current_legend_season(playertag)
 - legend_trophies(playertag)
@@ -195,18 +211,8 @@ def legend_trophies(playertag) do
 end
 ```
 
-`Players.Verification/2`
-- verifyplayer(playertag, token)
-
-```elixir
-alias Clashofclans.Extended.Players
-
-def verifyplayer(playertag, token) do
-  Players.verifyplayer(playertag, token)
-end
-```
-
 `Leagues/0`
+
 - legend_league
 - titan_league_three
 - titan_league_two
@@ -240,6 +246,7 @@ end
 ```
 
 `GoldPass/0`
+
 - goldpass_starttime
 - goldpass_endtime
 
@@ -250,3 +257,4 @@ alias Clashofclans.GoldPass
 ---
 
 © vKxni 2022, [MIT Licence](/LICENSE), by [@vKxni](https://github.com/vKxni).
+```
