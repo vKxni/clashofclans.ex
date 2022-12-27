@@ -253,6 +253,10 @@ end
 ```elixir
 alias Clashofclans.GoldPass
 
+def goldpass_starttime do
+  GoldPass.goldpass_starttime
+end
+```
 
 ---
 
